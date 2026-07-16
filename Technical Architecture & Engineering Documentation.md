@@ -1,6 +1,6 @@
 # Technical Architecture & Engineering Documentation: Local Telemetry Pipeline
 
-**Author:** Lead Data Scientist
+**Author:** Harsheet Gaandhi
 
 **Date:** July 2026
 
