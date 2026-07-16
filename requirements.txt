@@ -1,0 +1,11 @@
+# Computer Vision & Tracking
+opencv-python>=4.8.0
+mediapipe==0.10.14
+numpy>=1.24.0
+
+# Data Aggregation
+pandas>=2.0.0
+
+# LLM Orchestration
+langchain-google-genai>=1.0.0
+langchain-core>=0.1.0
