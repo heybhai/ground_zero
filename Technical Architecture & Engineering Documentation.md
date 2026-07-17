@@ -333,3 +333,13 @@ Run the client pipeline to aggregate the recorded spatial points and invoke the 
 
 * **Subprocess Sandbox Failures:** Legacy frameworks that run untrusted dynamic scripts in independent runtime sandboxes will drop connection packets on Windows due to environment path resolution collisions. This codebase uses a **deterministic extraction pattern**: all system operations (file checks, matrix mutations, and indexing) are handled natively by your local `pandas` engine, ensuring structural validation before any API payload hits the network layer.
 * **Path Separation Discrepancies:** Windows backslash notations (`\`) inside text prompts frequently trip up string literal transformations, resulting in severe `unicodeescape` syntax compilation errors. The pipeline successfully circumvents this by using direct `os.path.expanduser` evaluation blocks combined with automated native file lookups, keeping raw OS file paths entirely out of the text generation contexts.
+
+
+How to Execute the PipelineRun these commands in your Windows terminal to install the dependencies and launch the tools.1.Create and activate the environment:DOSpython -m venv openclaw-env
+.\openclaw-env\Scripts\activate
+2.Install dependencies:Ensure you uninstall any existing broken MediaPipe versions before installing from the requirements file.DOSpip uninstall -y mediapipe
+pip install -r requirements.txt
+3.Set your API Key:Ensure there are no quotes around your key.DOSset GEMINI_API_KEY=your_actual_key_here
+4.Run the Tracker:Launch the tracker and leave it running in the background to log your posture.DOSpython gaze_tracker.py
+5.Run the Analytics Agent:Open a second terminal (activate the environment and set the API key there too), and run the agent to get your report.DOSpython new_agent_client.py
+
